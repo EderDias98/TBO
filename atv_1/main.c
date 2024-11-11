@@ -13,10 +13,12 @@ int main(int argc, char*argv[]){
 
  
     inicio = clock(); // Marca o tempo inicial
-    char* vet = criaVetChar(N);
+    char* vet = criaVetBit(N);
+    imprimeBitVetor(vet,N);
     fim = clock();    // Marca o tempo final
-    marcaVetChar(vet,N);
-    imprimeVetPrimoChar(vet,N);
+    marcaVetBit(vet,N);
+  
+    imprimeVetBitPrimo(vet,N);
 
   
     tempo_gasto = ((double) (fim - inicio)) / CLOCKS_PER_SEC;
