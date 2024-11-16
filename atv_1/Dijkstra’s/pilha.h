@@ -3,10 +3,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void* criaPilha(int M);
+typedef struct pilha Pilha;
 
-void pushPilha(void* pilha,void*dado);
 
-void* popPilha(void* pilha);
+Pilha* criaPilha(int M);
+void pushPilha(Pilha* pilha,void*dado);
 
+
+void* popPilha(Pilha* pilha);
 #endif

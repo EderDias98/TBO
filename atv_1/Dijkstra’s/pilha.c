@@ -5,8 +5,6 @@ struct pilha{
     int topo;
     int M; // maximo tamanho;
 };
- typedef struct pilha Pilha;
-
 
 Pilha* criaPilha(int M){
 
@@ -18,16 +16,18 @@ Pilha* criaPilha(int M){
 }
 
 void pushPilha(Pilha* pilha,void*dado){
+    pilha->topo++;
+    
     if(pilha->topo<1 || pilha->topo > pilha->M )
         return;
+   
+    pilha->vet[pilha->topo-1] = dado;
     
-    pilha->vet[pilha->topo] = dado;
-    pilha->topo++;
 }   
 
-void* popPilha(Pilha* pilha,void*dado){
+void* popPilha(Pilha* pilha){
     if(pilha->topo<1 || pilha->topo > pilha->M )
-        return;
+        return 0;
 
     pilha->topo--;
     return pilha->vet[pilha->topo];
